@@ -1,0 +1,76 @@
+--Esercizio Primary keys, UPDATE, DELETE FROM, TRUNCATE, DROP TABLE
+1.
+CREATE TABLE CUSTOMER(
+	ID INT AUTO_INCREMENT,
+	FULLNAME VARCHAR(255),
+	RESERVATION_DATE TIMESTAMP,
+	FAVOURITE_MEAL VARCHAR(255),
+	PRIMARY KEY(ID)
+);
+
+2.
+INSERT INTO CUSTOMER (FULLNAME, RESERVATION_DATE, FAVOURITE_MEAL)
+VALUES("Clara Verdi", DATE_ADD(NOW(), INTERVAL 1 DAY), "Spaghetti Bolognese"),
+("Matteo Gialli", DATE_ADD(NOW(), INTERVAL 5 DAY), "Pesto Pasta"),
+("Giulio Bianchi", DATE_ADD(NOW(), INTERVAL 3 DAY), "Steak and Mash"),
+("Luca Rossi", DATE_ADD(NOW(), INTERVAL 2 DAY), "Sushi Platter"),
+("Maria Azzurri", DATE_ADD(NOW(), INTERVAL 4 DAY), "Grilled Chicken Sandwich");
+
+3.
+UPDATE CUSTOMER
+SET FAVOURITE_MEAL = "Pesto Pasta"
+WHERE ID = 5;
+
+UPDATE CUSTOMER
+SET RESERVATION_DATE = DATE_ADD(NOW(), INTERVAL 2 DAY)
+WHERE ID = 3;
+
+4.
+DELETE FROM CUSTOMER
+WHERE ID = 3;
+
+5.
+TRUNCATE TABLE CUSTOMER;
+
+------------
+
+--Look at the tables below and write which column(s) you think would make a good primary key.
+
+6.
+CREATE TABLE Customers (
+ customer_id INT NOT NULL AUTO_INCREMENT,
+ first_name VARCHAR(255) NOT NULL,
+ last_name VARCHAR(255) NOT NULL,
+ email VARCHAR(255) NOT NULL,
+ PRIMARY KEY (customer_id)
+);
+La colonna migliore per essere la primary key è customer_id.
+
+7.
+CREATE TABLE Products (
+ product_name VARCHAR(255) NOT NULL,
+ product_description VARCHAR(255) NOT NULL,
+ product_price DECIMAL(10, 2) NOT NULL,
+ product_quantity INT NOT NULL
+);
+La colonna migliore per essere la primary key è product_name.
+
+8.
+CREATE TABLE Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ customer_id INT NOT NULL,
+ expected_arrival_time DATE
+);
+La colonna migliore per essere la primary key è order_id.
+
+9.
+CREATE TABLE Product_Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ product_name VARCHAR(255) NOT NULL,
+ total_revenue DOUBLE
+);
+La colonna migliore per essere la primary key è order_id.
+
+
+
+
