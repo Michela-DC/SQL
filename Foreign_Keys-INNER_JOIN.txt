@@ -38,7 +38,7 @@ WHERE ingredients_count = 5;
 
 
 6.
-Using the following table definitions, write an inner join for the two tables
+Using the following table definitions, write an inner join for the two tables:
 
 CREATE TABLE CUSTOMER (
     CUSTOMER_ID INT,
@@ -58,7 +58,7 @@ FROM CUSTOMER c
 INNER JOIN ORDER o ON c.CUSTOMER_ID = O.CUSTOMER_ID;
 
 
-Using the following table definitions, write an inner join for the two tables
+Using the following table definitions, write an inner join for the two tables:
 
 CREATE TABLE PRODUCT (
     PRODUCT_ID INT,
